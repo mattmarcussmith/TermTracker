@@ -1,0 +1,16 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker.Pages.Terms.EditTermPage">
+
+    <StackLayout Padding="10">
+
+        <Label Text="Edit Term" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,0,0,20"/>
+
+        <Entry Placeholder="Edit Term Name" Text="{Binding Title}" x:Name="termName" />
+        <DatePicker x:Name="startDate" />
+        <DatePicker x:Name="endDate" />
+        <Button Text="Save" Clicked="OnSaveClicked" Background="CadetBlue" Margin="5"/>
+        <Button Text="Back" Clicked="OnBackClicked" Background="red" Margin="5"/>
+    </StackLayout>
+    
+</ContentPage>

@@ -1,0 +1,73 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker.Pages.Terms.TermsListPage">
+    
+
+    <StackLayout Padding="10">
+
+        <Label Text="Terms"
+           FontSize="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"
+           Margin="0,0,0,20"/>
+
+        <ListView x:Name="termsListView" ItemSelected="OnTermSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                
+                                
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Title}" VerticalOptions="Center" Grid.Column="0"  />
+
+                            <Button Text="Edit" 
+                                    Clicked="OnEditClicked" 
+                                    CommandParameter="{Binding .}" 
+                                    BackgroundColor="Gray" 
+                                    TextColor="White"
+                    
+                                    FontSize="Small"
+                                    HeightRequest="40"
+                                    WidthRequest="60"
+                                    Grid.Column="2" 
+                                    Margin="4,0,0,0"/>
+
+                            <Button Text="Delete" 
+                                    Clicked="OnDeleteClicked" 
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="Red"
+                                    TextColor="White"
+                                 
+                                    FontSize="Small"
+                                    HeightRequest="40"
+                                    WidthRequest="80"
+                                    Grid.Column="3" 
+                                    Margin="1,0,0,0"/>
+
+                            <Button Text="Courses" 
+                                    Clicked="OnClassesClicked" 
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="CadetBlue"
+                                    TextColor="White"
+                             
+                                    FontSize="Small"
+                                    HeightRequest="40"
+                                    WidthRequest="90"
+                                    Grid.Column="1" 
+                                    Margin="1,0,0,0"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Back" Clicked="OnBackClicked" Background="Red" Margin="10"/>
+    </StackLayout>
+</ContentPage>
+

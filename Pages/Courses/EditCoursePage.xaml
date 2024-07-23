@@ -1,0 +1,43 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker.Pages.Courses.EditCoursePage">
+
+    <StackLayout Padding="10">
+        <Entry Placeholder="Enter Course Name" Text="{Binding Name}" x:Name="courseName" />
+     
+
+        <Picker Title="Select Course Status" x:Name="courseStatusPicker" SelectedItem="{Binding Status}">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Planned</x:String>
+                    <x:String>In Progress</x:String>
+                    <x:String>Completed</x:String>
+                    <x:String>Withdrawn</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Entry Placeholder="Enter Instructor Name" Text="{Binding InstructorName}" x:Name="instructorName" />
+        <Entry Placeholder="Enter Instructor Phone" Text="{Binding InstructorPhone}" x:Name="instructorPhone" />
+        <Entry Placeholder="Enter Instructor Email" Text="{Binding InstructorEmail}" x:Name="instructorEmail" />
+        <Editor Placeholder="Enter Notes" Text="{Binding Notes}" x:Name="courseNotes" HeightRequest="100"/>
+
+        <StackLayout Orientation="Horizontal" Padding="5">
+            <DatePicker Date="{Binding StartDate}" x:Name="startDate" />
+            <Label Text="Enable Start Date Notification" VerticalOptions="Center"  Margin="23,0,20,0"/>
+
+            <Switch x:Name="startNotificationSwitch" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="5">
+            <DatePicker Date="{Binding EndDate}" x:Name="endDate" />
+            <Label Text="Enable End Date Notification" VerticalOptions="Center" Margin="23,0,20,0" />
+
+
+            <Switch x:Name="endNotificationSwitch" />
+
+        </StackLayout>
+
+        <Button Text="Save" Clicked="OnSaveClicked" Background="CadetBlue" Margin="10" x:Name="NotificationBtn"/>
+        <Button Text="Back" Clicked="OnBackClicked" Background="Red" Margin="10"/>
+    </StackLayout>
+</ContentPage>

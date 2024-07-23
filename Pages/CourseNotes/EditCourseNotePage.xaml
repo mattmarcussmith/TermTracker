@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker.Pages.CourseNotes.EditCourseNotePage"
+             Title="Edit Course Note ">
+
+    <StackLayout Padding="10">
+        <Editor Placeholder="Enter note here..." x:Name="noteContent" HeightRequest="200"/>
+        <Button Text="Save" Clicked="OnSaveClicked" BackgroundColor="CadetBlue"/>
+        <Button Text="Back" Clicked="OnBackClicked" BackgroundColor="Red"/>
+    </StackLayout>
+</ContentPage>

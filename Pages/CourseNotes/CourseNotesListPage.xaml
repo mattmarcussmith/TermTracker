@@ -1,0 +1,33 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker.Pages.CourseNotes.CourseNotesListPage"
+             Title="Course Notes">
+
+    <StackLayout Padding="10">
+        <ListView x:Name="notesListView" ItemSelected="OnNoteSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5" ColumnSpacing="10">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Content}" VerticalOptions="Center"  Grid.Column="0"/>
+                            <Button Text="Edit" Clicked="OnEditClicked" CommandParameter="{Binding .}" BackgroundColor="Gray" TextColor="White" Padding="10" FontSize="Medium" HeightRequest="40" WidthRequest="80" Grid.Column="1"/>
+                            <Button Text="Delete" Clicked="OnDeleteClicked" CommandParameter="{Binding .}" BackgroundColor="Red" TextColor="White" Padding="10" FontSize="Medium" HeightRequest="40" WidthRequest="80" Grid.Column="2"/>
+                            <Button Text="Share" Clicked="OnShareClicked" CommandParameter="{Binding .}" BackgroundColor="Blue" TextColor="White" Padding="10" FontSize="Medium" HeightRequest="40" WidthRequest="80" Grid.Column="3"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Add Note" Clicked="OnAddNoteClicked" Background="CadetBlue"/>
+        <Button Text="Back" Clicked="OnBackClicked" Background="Red" Margin="0,0,0,70"/>
+    </StackLayout>
+</ContentPage>

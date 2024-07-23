@@ -1,0 +1,23 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker.MainPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <StackLayout Padding="10">
+
+        <Label Text="WGU - Term Tracker"
+           FontSize="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"
+           Margin="0,0,0,20"/>
+    
+
+        <Entry Placeholder="Enter Term Name" x:Name="termName" />
+        <DatePicker x:Name="startDate" />
+        <DatePicker x:Name="endDate" />
+        
+        <Button Text="Add Term" Clicked="OnAddTermClicked" Background="CadetBlue" Margin="10"/>
+        <Button Text="Current Terms" Clicked="OnTermsListClicked" Background="DarkGray"  Margin="10"/>
+    </StackLayout>
+</ContentPage>
+
